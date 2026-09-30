@@ -1,6 +1,6 @@
 ---
 title: EU AI Act Compliance
-description: Automate European Union AI Act compliance, post-market monitoring (Art. 72), risk classification, and audit exports.
+description: Automate European Union AI Act compliance, post-market monitoring (Art. 72), risk classification, and cryptographic audit traces.
 ---
 
 # EU AI Act Compliance Engine

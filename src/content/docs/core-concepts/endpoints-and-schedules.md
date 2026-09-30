@@ -11,11 +11,13 @@ Workflows in Agentoom can run interactively via the Command Center or trigger au
 
 ## 🌐 Endpoints (Inbound HTTP Webhooks)
 
-An **Endpoint** generates a dedicated, secure webhook URL. When external systems (like Stripe, Shopify, GitHub, or internal ERPs) post JSON payloads to this endpoint, Agentoom captures the request, verifies credentials, and dispatches the corresponding agent or pipeline to background queue workers.
+An **Endpoint** generates a dedicated, secure webhook URL. When external systems (like Stripe, Shopify, GitHub, or internal ERPs) post JSON payloads to this endpoint, Agentoom captures the request, verifies credentials, and executes the assigned agent or pipeline.
 
-- **Asynchronous Execution**: External callers receive an immediate `202 Accepted` response with a tracking ID.
-- **Payload Forwarding**: Inbound JSON parameters are passed directly to Step 0 of the pipeline.
-- **Request Rate Limiting**: Protect your workers against traffic spikes with per-endpoint throttling.
+- **Dual Execution Modes**:
+  - **Direct Response (Asynchronous)**: Returns an immediate customizable status acknowledgement (e.g. `200` or `202`) while dispatching execution to background queue workers (`agent-chat-processing`).
+  - **Synchronous Execution**: Waits for the agent or pipeline run to complete and returns the processed response payload directly to the caller.
+- **Payload Forwarding**: Inbound JSON parameters are forwarded as input context to the agent or Step 0 of the pipeline.
+- **Security & Rate Limiting**: Restrict traffic with allowed origin/IP whitelists (`allowed_sources`), header bearer auth tokens (`auth_token`), and per-endpoint rate limit throttling.
 
 ---
 

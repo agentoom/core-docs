@@ -16,5 +16,6 @@ Observing production AI workloads requires tracking both application performance
 - **Executions Today**: Total number of agent runs and pipeline steps dispatched in the current 24-hour cycle.
 - **Failure Rate**: Percentage of runs that encountered an uncaught error, timeout, or provider exception.
 - **Average Response Time**: End-to-end latency from request dispatch to final token delivery (in milliseconds).
-- **Daily Cost**: Total AI credit / monetary expenditure consumed across all model providers today.
+- **Daily Cost & Token Volume**: Total AI credit expenditure and aggregate token volume consumed today across all connected models.
 - **Queue Depth**: Number of background tasks waiting in Redis for worker pickup.
+- **Provider Health & Latency**: Per-model invocation counts and average latency benchmarks across your connected AI labs.

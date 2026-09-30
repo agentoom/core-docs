@@ -76,7 +76,7 @@ This section contains your security gates and compliance controls.
 - **Emergency Stops**: Instant master kill-switches to halt any agent or workflow immediately.
 - **Incidents & Alerts**: Track non-conformity events, risk escalations, and overdue reviews.
 - **Assessment Wizard**: Interactive questionnaire to classify deployments (Minimal, Limited, or High Risk).
-- **Control Library & Governance Profiles**: Apply tailored security benchmarks to projects.
+- **Control Library & Governance Profiles**: Apply tailored compliance control benchmarks to Governed Deployments (Agents, Pipelines, and Endpoints).
 
 ---
 

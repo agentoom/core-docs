@@ -19,20 +19,27 @@ Agentoom allows you to deploy custom-branded conversational widgets to any publi
    - Primary brand color, logo, and chat bubble position (Bottom-Right or Bottom-Left).
    - Welcome greetings and suggested starting prompts.
 4. **Embed Snippet**:
-   Copy the generated `<script>` tag and paste it into the HTML of your website:
+   Copy the generated `<script>` tag and paste it into your website:
    ```html
-   <script 
-     src="https://your-agentoom-domain.com/widgets/chat.js" 
-     data-widget-id="wgt_984f10a8"
-     defer>
-   </script>
+   <script src="https://your-agentoom-domain.com/jsd/agentoom-vars.js?id=your-widget-slug"></script>
    ```
+
+### Conversational Forms (`FormWidget`)
+You can also embed structured conversational lead-capture forms using:
+```html
+<script src="https://your-agentoom-domain.com/jsd/form-vars.js?id=your-form-slug"></script>
+```
 
 ---
 
 ## ♿ Accessibility Widgets (`@agentoom/core-accessibility-widget`)
 
-The `@agentoom/core-accessibility-widget` ensures your public-facing chat interface meets WCAG accessibility guidelines:
-- High-contrast color modes for visually impaired users.
-- Adjustable font sizing and dyslexia-friendly typography.
-- Keyboard navigation shortcuts and screen reader optimizations.
+The `@agentoom/core-accessibility-widget` ensures your public-facing web applications meet WCAG 2.1 / ADA accessibility guidelines:
+- **Visual Controls**: High-contrast mode, saturation adjustments, monochrome display, and font scaling.
+- **Typography & Layout**: OpenDyslexic font switcher, adjustable line height, and letter spacing.
+- **Assistive UX**: Reading ruler guide, high-visibility cursor, stop animations toggle, and screen reader compatibility.
+
+### Embed Snippet
+```html
+<script src="https://your-agentoom-domain.com/api/accessibility/loader/your-widget-slug.js" defer></script>
+```

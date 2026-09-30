@@ -76,7 +76,7 @@ Agentoom organizes its functionality into four integrated tiers:
     Build sophisticated agents, craft multi-step conditional pipelines, connect custom MCP servers, and write high-speed PHP Actionables.
   </Card>
   <Card title="Compliance & DPO Officers" icon="document">
-    Fulfill EU AI Act requirements effortlessly with automated risk questionnaires, audit-ready exports, and emergency shutdown switches.
+    Fulfill EU AI Act requirements effortlessly with automated risk questionnaires, cryptographic audit traces, and emergency shutdown switches.
   </Card>
   <Card title="Operations & Support Leads" icon="setting">
     Deploy embeddable chat widgets on company websites, connect WhatsApp/Telegram channels, and take over conversations in real time with Live Support.
@@ -100,7 +100,7 @@ Unlike prompt guardrails that ask the AI to "please confirm before sending an em
 Yes. Agentoom is designed from the ground up for **self-hosting**. Your data, knowledge documents, conversations, and audit records never leave your servers unless you explicitly configure an external model provider.
 
 ### Is Agentoom compatible with OpenAI SDKs and tools?
-Yes. Through the `@agentoom/core-openapi-v1` package, Agentoom exposes a standard OpenAI-compatible `/v1/chat/completions` API. You can point existing tools, LangChain agents, or Cursor directly to Agentoom as a drop-in replacement.
+Yes. Through the `@agentoom/core-openapi-v1` package, Agentoom exposes standard OpenAI-compatible `/v1/chat/completions` and `/v1/models` endpoints using `sk-agt-...` tokens. You can point existing tools, official OpenAI SDKs, LangChain agents, or Cursor directly to Agentoom as a drop-in replacement.
 
 ---
 
