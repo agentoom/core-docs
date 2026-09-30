@@ -37,8 +37,59 @@ Agents can discover and invoke registered tools at runtime. Agentoom includes ov
 
 ---
 
-## 🧠 Version History & Immutability
+## 🧠 Version History & Single-Click Rollback
 
-Every modification made to an agent's instructions, model parameters, or attached tools creates an **immutable version snapshot**. 
+Prompt engineering is an iterative process. Modifying a system prompt, adjusting temperature, or swapping a model parameter can sometimes cause unexpected regressions in factual adherence or formatting.
 
-If a newly edited prompt degrades response quality or fails an internal evaluation, operators can rollback to any previous version with a single click in the Command Center.
+To make prompt iteration completely safe and compliant with enterprise auditing standards, Agentoom captures an **immutable version snapshot** every time an agent is saved.
+
+---
+
+### 🔍 Where to Find Version History in the Command Center
+
+1. Navigate to **Build & Extend > Agents** in the left sidebar.
+2. Click on any existing agent to open the **Edit Agent** form.
+3. In the top header next to the agent title, click the **Version History (vX)** button (or click **Version History** in the bottom action bar).
+
+```text
++------------------------------------------------------------------------------------------+
+| Edit Agent: Support Specialist                                  [ Version History (v4) ] |
+| Edit agent details and prompt instructions                                               |
++------------------------------------------------------------------------------------------+
+```
+
+---
+
+### ⏱️ Inspecting Snapshots & Field Diffs
+
+Clicking **Version History** opens an interactive modal displaying:
+- **Chronological Timeline**: See every version (`v1`, `v2`, `v3`, `v4`), author identity, exact timestamp, and change notes.
+- **Current Version Badge**: Highlights the active configuration currently in production.
+- **Inspect Differences**: Click **Inspect** on any past version to view:
+  - Side-by-side visual diff comparing modified fields against the current saved state (system prompt instructions, role, objective, operational protocol, error handling, or model parameters).
+  - Exact tool additions and removals.
+  - Complete snapshot preview.
+
+---
+
+### 🔄 Rolling Back to a Previous Version
+
+If a prompt update introduces an issue:
+1. Open the **Version History** modal on the agent edit page.
+2. Locate the stable past version you want to restore.
+3. Click the **Rollback** button on that row (or from within the inspection diff view).
+4. Confirm the confirmation dialog.
+
+Agentoom will:
+- Revert all system prompt instructions, role, objective, protocols, model configuration, and attached tool associations to the exact snapshot state.
+- Instantly refresh the form in the Command Center.
+- Create a new immutable audit entry (e.g. `v5: Rolled back to Version 2`) so the rollback itself is permanently logged for EU AI Act Article 72 compliance.
+
+---
+
+### ✍️ Adding Version Change Notes
+
+When making modifications to an agent:
+- At the bottom of the form before saving, use the **Version Notes (Optional)** field (e.g. *"Lowered temperature to 0.2 and enabled cautious constraint"*).
+- Your note is saved directly into the snapshot metadata, helping your team understand the reasoning behind each prompt iteration.
+
