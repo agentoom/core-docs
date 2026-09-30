@@ -53,7 +53,6 @@ Connect agents to customers and internal teams across messaging networks via `@a
 ## 💻 3. Client Embeds & User Interfaces
 
 - **Embeddable Chat Widget (`@agentoom/core-chat-widget`)**: Lightweight, drop-in JavaScript widget for any website, supporting custom branding, avatar customization, streaming responses, and starter prompt pills.
-- **Accessibility Toolbar (`@agentoom/core-accessibility-widget`)**: WCAG 2.1 AA certified UI with high-contrast modes, dyslexia typography, text size scaling, and screen-reader optimizations.
 - **Live Support Takeover (`@agentoom/core-live-support`)**: Real-time human-in-the-loop takeover desk. Support agents can monitor conversations and seamlessly take over from AI assistants in the active widget session.
 - **Conversational Forms & Lead Generators**: Multi-step structured data collection forms driven by conversational AI.
 

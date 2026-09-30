@@ -9,6 +9,9 @@ To help less-technical users and new team members navigate the platform, here is
 
 ---
 
+### Command Center
+The centralized, web-based administrative console and operational control deck of Agentoom (accessed at `/admin/dashboard`). It provides unified management and visibility across autonomous agents, visual pipeline orchestration, inbound endpoints, scheduled cron jobs, real-time telemetry, project budget tracking, Sentinel human-in-the-loop approvals, and EU AI Act compliance oversight.
+
 ### Agent
 An autonomous software assistant powered by an AI Large Language Model (LLM). An agent combines **system instructions** (defining its personality and role), **knowledge bases** (documents it can read), and **tools** (actions it can take).
 

@@ -96,11 +96,10 @@ Tools to expand your agents' capabilities and connect external services.
 - Automatically discover and sync external capabilities as native agent tools.
 - Manage shared MCP API tokens and cost tracking.
 
-#### Chat & Accessibility Widgets
+#### Chat Widgets & Conversational Forms
 ![Widgets Management](/images/screenshots/widgets.png)
 - **Chat Widgets**: Generate embeddable JavaScript code snippets to add an AI chat bubble to any website.
 - **Forms & Prompts**: Create conversational lead-generation forms.
-- **Accessibility Widgets**: Ensure high contrast, screen reader compatibility, and font adjustments.
 
 #### API Endpoints & Triggers
 ![API Endpoints](/images/screenshots/endpoints.png)

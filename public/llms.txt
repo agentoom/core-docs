@@ -28,7 +28,6 @@
 - [@agentoom/core-privacy-pro](/packages/core-privacy-pro/): Remote privacy microservice integration.
 - [@agentoom/core-openapi-v1](/packages/core-openapi-v1/): Drop-in OpenAI-compatible API gateway (`/v1/chat/completions`).
 - [@agentoom/core-chat-widget](/packages/core-chat-widget/): Embeddable JavaScript chat interface for web applications.
-- [@agentoom/core-accessibility-widget](/packages/core-accessibility-widget/): Accessible UI controls and high-contrast support.
 - [@agentoom/core-live-support](/packages/core-live-support/): Real-time human takeover for agent conversations.
 - [@agentoom/core-instant-messaging](/packages/core-instant-messaging/): Multi-channel messaging connectors (WhatsApp, Telegram).
 - [@agentoom/core-experimentoom](/packages/core-experimentoom/): A/B testing and experimentation integration.
