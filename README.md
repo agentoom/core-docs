@@ -1,45 +1,78 @@
-# Agentoom Core Documentation
+# Agentoom Core Documentation (`@agentoom/core-docs`)
 
-Stand-alone documentation package for Agentoom Core, powered by [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
+The centralized developer and operator documentation portal for **Agentoom Core**, powered by [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+---
 
-## 🚀 Project Structure
+## 🌟 Overview
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+The `@agentoom/core-docs` package contains the complete technical documentation, architecture guides, API references, tool development tutorials, and deployment documentation for the Agentoom ecosystem. It builds into a fast, accessible, static documentation portal with full-text search, dark/light theme switching, syntax highlighting, and responsive navigation.
+
+- **Package Name**: `@agentoom/core-docs`
+- **Engine**: Astro v5+ with Starlight documentation theme
+- **Output**: Static HTML/CSS/JS (`dist/`) suitable for hosting on Nginx, Cloudflare Pages, Vercel, or AWS S3
+
+---
+
+## 🚀 Key Features
+
+### 1. Developer Documentation Suite
+- **Getting Started & Installation**: Step-by-step guides for installing and configuring Agentoom Core and its satellite packages.
+- **Agent Architecture**: Documentation explaining agent creation, system instructions, stateful context windows, model selection, and memory retention.
+- **Tool & Skill Development**: Tutorials on creating custom agent tools using PHP attributes (`#[Actionable]`, `#[Sentinelable]`, `#[GroupVisibility]`).
+- **Pipeline & Scheduler Guides**: Instructions on orchestrating multi-step workflows, setting up cron schedules, and managing background queues.
+- **Model Context Protocol (MCP)**: Guides on integrating local or remote MCP servers with Agentoom.
+- **Governance & Compliance**: In-depth explanations of the EU AI Act compliance engine, risk classifications, audit logs, and emergency stops.
+
+### 2. Modern Static Documentation Engine
+- **Starlight Powered**: Built-in full-text search, table of contents, pagination, external link indicators, and mobile-friendly sidebar navigation.
+- **Markdown & MDX Support**: Write rich documentation using standard Markdown or interactive components with MDX.
+- **Fast Build Times**: Powered by Astro's optimized Vite-based compilation pipeline.
+
+---
+
+## 📁 Package Structure
 
 ```
-.
-├── public/
+core-docs/
+├── public/                 # Static assets (favicons, images)
 ├── src/
-│   ├── assets/
+│   ├── assets/             # Brand logos and illustrations
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+│   │   ├── docs/           # Documentation content pages (.md / .mdx)
+│   │   │   ├── guides/     # Step-by-step developer guides
+│   │   │   └── reference/  # Architecture and API reference documentation
+│   │   └── content.config.ts # Starlight collection schemas
+│   └── env.d.ts
+├── astro.config.mjs        # Astro & Starlight configuration (sidebar, nav, title)
+├── package.json            # Node dependencies and scripts
+└── tsconfig.json           # TypeScript configuration
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+---
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## 💻 Development & Build Commands
 
-Static assets, like favicons, can be placed in the `public/` directory.
+All commands are executed from the `packages/agentoom/core-docs` directory:
 
-## 🧞 Commands
+```bash
+# Install dependencies
+npm install
 
-All commands are run from the root of the project, from a terminal:
+# Start local development server (accessible at http://localhost:4321)
+npm run dev
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+# Start local server in the background
+astro dev --background
 
-## 👀 Want to learn more?
+# Stop, check status, or view logs for background server
+astro dev stop
+astro dev status
+astro dev logs
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+# Compile production-ready static site to dist/
+npm run build
+
+# Preview production build locally
+npm run preview
+```

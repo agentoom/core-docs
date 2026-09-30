@@ -1,40 +1,55 @@
 ---
-title: Agentoom Core Documentation
-description: Guides, architecture, and API reference for Agentoom Core.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Agentoom Documentation
+description: The Enterprise AI Operating System — Developer guides, architecture, trust layer, and API reference.
+template: splash
 hero:
-  tagline: Developer guides, architecture, and reference documentation for Agentoom Core.
-  image:
-    file: ../../assets/houston.webp
+  tagline: The Enterprise AI Operating System. Orchestrate autonomous agents, zero-token deterministic actionables, and EU AI Act compliance in a self-hosted platform.
   actions:
-    - text: Getting Started
-      link: /guides/example/
+    - text: What is Agentoom?
+      link: /getting-started/what-is-agentoom/
       icon: right-arrow
-    - text: Read Starlight Docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: Quickstart in 5 Mins
+      link: /getting-started/quickstart-guide/
+      icon: rocket
+      variant: secondary
+    - text: User Interface Tour
+      link: /getting-started/user-interface-tour/
+      icon: open-book
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Explore Agentoom
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="What is Agentoom?" icon="information">
+    Learn how Agentoom combines an event-driven Execution Plane with a mandatory Trust Layer. Discover the enterprise benefits and core pillars.
+    [Read Introduction &rarr;](/getting-started/what-is-agentoom/)
+  </Card>
+
+  <Card title="Visual UI Tour" icon="laptop">
+    Take a complete visual walkthrough of the Command Center, Top Bar, and Sidebar with annotated high-resolution screenshots.
+    [View the Tour &rarr;](/getting-started/user-interface-tour/)
+  </Card>
+
+  <Card title="Sentinel Security Buffer" icon="shield">
+    Explore code-level interception of agent tool calls with OTP email and in-chat verbal confirmation workflows.
+    [Explore Sentinel &rarr;](/govern/sentinel-security-buffer/)
+  </Card>
+
+  <Card title="EU AI Act Compliance" icon="document">
+    Automate Article 72 post-market monitoring, risk tier assessment wizards, and one-click auditor evidence exports.
+    [Compliance Guide &rarr;](/govern/eu-ai-act-compliance/)
+  </Card>
+
+  <Card title="Zero-Token Actionables" icon="rocket">
+    Run deterministic PHP functions directly in pipelines without paying AI model token fees or risking hallucinations.
+    [Learn About Actionables &rarr;](/core-concepts/actionables-zero-token-compute/)
+  </Card>
+
+  <Card title="Model Context Protocol (MCP)" icon="setting">
+    Connect external local or remote MCP servers to dynamically expose databases and tools to your agents.
+    [Connect MCP Servers &rarr;](/build-and-extend/mcp-servers/)
+  </Card>
 </CardGrid>

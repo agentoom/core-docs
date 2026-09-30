@@ -1,0 +1,39 @@
+# Agentoom Documentation Index for AI Agents and LLMs
+> Agentoom is the Enterprise AI Operating System (September 2026 Edition), providing an event-driven Execution Plane, deterministic Actionables, multi-tier Trust Layer (Sentinel security buffer, EU AI Act compliance, AGPII privacy anonymization), and multi-tenant Command Center.
+
+## Core Overview
+- [What is Agentoom?](/getting-started/what-is-agentoom/): High-level definition, architectural elevator pitch, and enterprise value proposition.
+- [Quickstart Guide](/getting-started/quickstart-guide/): Step-by-step tutorial to create and deploy a governed agent in 5 minutes.
+- [User Interface Tour](/getting-started/user-interface-tour/): Visual walkthrough of the Command Center, Govern suite, and Build & Extend modules.
+- [Glossary](/getting-started/glossary/): Plain-English explanations of key terms (Agents, Actionables, Sentinel, GovernanceGate, AGPII).
+
+## Architecture & Concepts
+- [Agents & Tasks](/core-concepts/agents-and-tasks/): Instructions, registered tools, skills, learned skills, and dynamic model routing.
+- [Pipelines & Workflows](/core-concepts/pipelines-and-workflows/): Multi-step event-driven orchestration with conditional branches, jumps, and error recovery.
+- [Actionables: Zero-Token Compute](/core-concepts/actionables-zero-token-compute/): Deterministic PHP method execution without LLM fees or hallucinations.
+- [Endpoints & Schedules](/core-concepts/endpoints-and-schedules/): Inbound HTTP webhooks and cron triggers for autonomous pipelines.
+- [Credits & Cost Control](/core-concepts/credits-and-cost-control/): Token pricing, real-time credit deduction, and per-agent budget caps.
+
+## Trust & Governance Layer (Enterprise)
+- [Sentinel Security Buffer](/govern/sentinel-security-buffer/): Application-layer mandatory middleware intercepting tool calls with OTP and verbal confirmations.
+- [Trust Layer & Privacy](/govern/trust-layer-privacy/): Local AGPII tag processor and hybrid regex PII anonymization / pseudonymization.
+- [External Privacy Engine](/govern/external-privacy-engine/): Remote semantic PII detection with Agentoom Privacy Pro.
+- [EU AI Act Compliance](/govern/eu-ai-act-compliance/): Post-market monitoring (Art. 72), risk assessment wizard, emergency stops, and HITL decisions.
+
+## Packages (Monorepo Suite)
+- [@agentoom/core-main](/packages/core-main/): Core engine, queue workers, agent runtime, and pipeline executor.
+- [@agentoom/core-sentinel](/packages/core-sentinel/): Bypass-proof security buffer and authorization logs.
+- [@agentoom/core-compliance](/packages/core-compliance/): Legal compliance engine for EU AI Act classification and audit trails.
+- [@agentoom/core-privacy](/packages/core-privacy/): Local PII detection and pseudonymization mapping store.
+- [@agentoom/core-privacy-pro](/packages/core-privacy-pro/): Remote privacy microservice integration.
+- [@agentoom/core-openapi-v1](/packages/core-openapi-v1/): Drop-in OpenAI-compatible API gateway (`/v1/chat/completions`).
+- [@agentoom/core-chat-widget](/packages/core-chat-widget/): Embeddable JavaScript chat interface for web applications.
+- [@agentoom/core-accessibility-widget](/packages/core-accessibility-widget/): Accessible UI controls and high-contrast support.
+- [@agentoom/core-live-support](/packages/core-live-support/): Real-time human takeover for agent conversations.
+- [@agentoom/core-instant-messaging](/packages/core-instant-messaging/): Multi-channel messaging connectors (WhatsApp, Telegram).
+- [@agentoom/core-experimentoom](/packages/core-experimentoom/): A/B testing and experimentation integration.
+
+## Technical Reference
+- [PHP Attributes Reference](/reference/php-attributes/): `#[Actionable]`, `#[Sentinelable]`, `#[GroupVisibility]`.
+- [OpenAPI v1 Endpoints](/reference/openapi-v1-endpoints/): Drop-in OpenAI SDK integration guide and endpoints.
+- [Artisan Commands](/reference/artisan-commands/): CLI maintenance, provider pricing sync, and worker management.
