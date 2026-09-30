@@ -1,20 +1,102 @@
 ---
-title: AI Providers & Model Configuration
-description: Configure OpenAI, Anthropic, Google Gemini, Groq, and local Ollama model providers in Agentoom.
+title: AI Providers & Model Ecosystem
+description: Comprehensive guide to AI providers supported in Agentoom (September 2026), including OpenRouter, OpenAI, Anthropic, Google Gemini, DeepSeek, xAI, Groq, Mistral, Bedrock, Azure, and local inference.
 ---
 
-# AI Providers & Model Configuration
+import { Badge, Card, CardGrid } from '@astrojs/starlight/components';
 
-Agentoom decouples your business logic from any specific AI provider, allowing you to switch models or route different agents to different providers dynamically.
+# AI Providers & Model Ecosystem
+
+Agentoom decouples your business logic from any single AI vendor. The platform provides native connectors to commercial frontier models, ultra-low-latency LPU inference engines, enterprise cloud VPCs, and fully air-gapped local hardware.
+
+Pricing tables, context windows, and model capabilities are automatically tracked and updated in real time via automated feeds from `models.dev` and `litellm`.
 
 ---
 
-## 🌐 Supported Model Providers
+## 🌐 Supported Model Providers & Gateways
 
-- **OpenAI**: GPT-4o, GPT-4o mini, o1, o3-mini.
-- **Anthropic**: Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus.
-- **Google DeepMind**: Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini 2.0.
-- **Groq & Mistral**: Ultra-fast inference with Llama 3 models.
-- **Local Ollama & vLLM**: Run open-source models completely offline on your own GPU infrastructure with zero data leakage.
+Agentoom supports the complete spectrum of industry providers:
 
-In **Build & Extend > Providers**, enter your provider API credentials. Pricing tables are updated automatically via background sync tasks to keep token cost calculations accurate.
+### 1. OpenRouter (Unified Model Gateway)
+- **Best For**: Centralized access to over 300+ models with automated fallback routing and zero vendor lock-in.
+- **Features**: Automatically reroutes requests to healthy endpoints if a primary provider experiences downtime or rate limits.
+- **Supported Models**: Direct access to all OpenAI, Anthropic, Google, Meta Llama, DeepSeek, Qwen, and Mistral models through a single API key and consolidated billing.
+
+### 2. OpenAI
+- **Reasoning Models**: `o3`, `o3-pro`, `o3-mini`, `o1`.
+- **Flagship Multimodal**: `gpt-4.5`, `gpt-4o`, `gpt-4o-mini`.
+- **Specialized Services**: Realtime audio streaming, text embeddings (`text-embedding-3-large`), and image analysis.
+
+### 3. Anthropic
+- **Hybrid Reasoning**: `claude-3-7-sonnet` (supports adjustable extended thinking budgets).
+- **Flagship Intelligence**: `claude-3-5-sonnet`, `claude-3-opus`.
+- **High-Speed Operations**: `claude-3-5-haiku` for high-throughput classification and extraction.
+
+### 4. Google DeepMind & Vertex AI
+- **Frontier Models**: `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.0-flash`, `gemini-1.5-pro`.
+- **Features**: Million-token context windows, native audio/video multimodal processing, and enterprise Google Cloud Vertex AI data residency.
+
+### 5. DeepSeek
+- **Open-Weights Reasoning**: `deepseek-r1` (specialized in complex logic, math, and code).
+- **General Architecture**: `deepseek-v3` (high-capacity Mixture-of-Experts architecture), `deepseek-coder`.
+
+### 6. xAI
+- **Models**: `grok-2`, `grok-3`.
+- **Features**: Deep real-time web knowledge retrieval and advanced multimodal reasoning via the official xAI API.
+
+### 7. Groq & Cerebras (Ultra-Low-Latency Inference)
+- **Architecture**: Language Processing Units (LPUs) and wafer-scale hardware generating 400–800+ tokens per second.
+- **Models**: `llama-3.3-70b-versatile`, `llama-3.1-405b`, `mixtral-8x22b`.
+- **Best For**: Real-time voice agents, instant customer support widgets, and high-frequency data pipelines.
+
+### 8. Mistral AI
+- **Models**: `mistral-large-2`, `pixtral-large` (multimodal), `codestral-2501` (code generation), `mistral-small`.
+- **Features**: European data sovereignty, open weights, and high reasoning efficiency.
+
+### 9. Cohere
+- **Models**: `command-r+`, `command-r`, `command-a`.
+- **Features**: Enterprise-grade multilingual fluency, native citation grounding, and state-of-the-art reranking models.
+
+### 10. Enterprise Cloud Gateways (Private VPCs)
+- **Amazon Bedrock**: Access Claude, Llama, and Titan inside private AWS VPCs with IAM role authorization and HIPAA/SOC2 compliance.
+- **Microsoft Azure OpenAI**: Deploy dedicated OpenAI instances with private network endpoints and regional data boundary guarantees.
+
+### 11. Local & Air-Gapped Offline Inference
+- **Engines**: **Ollama**, **vLLM**, **LocalAI**, **TGI (Text Generation Inference)**.
+- **Protocol**: Fully compatible with any local server exposing the standard `/v1/chat/completions` endpoint.
+- **Best For**: Defense, healthcare, and air-gapped enterprise environments requiring 100% data confinement with zero external internet access.
+
+---
+
+## 📊 Automated Pricing Feeds & 8-Dimensional Cost Tracking
+
+To ensure real-time accuracy of budget enforcement and credit deductions, Agentoom continuously synchronizes model pricing via:
+
+```bash
+php artisan agentoom:sync-ai-pricing
+```
+
+Unlike basic trackers that only measure prompt and completion tokens, Agentoom evaluates **8 distinct cost dimensions**:
+
+| Cost Mode | Description |
+|---|---|
+| `base` / `request` | Flat per-invocation transaction fee (if applicable) |
+| `input` | Prompt tokens transmitted to the model |
+| `output` | Completion tokens generated by the model |
+| `reasoning` | Internal chain-of-thought tokens (e.g. OpenAI o3/o1, DeepSeek R1, Claude 3.7 thinking) |
+| `cache_read` | Discounted tokens read from prompt cache |
+| `cache_write` | Tokens committed to provider prompt cache |
+| `audio_input` / `audio_output` | Voice tokens processed or synthesized |
+| `image` | Resolution-based image input units |
+
+---
+
+## 🎛️ Provider Configuration in the Command Center
+
+1. In the Command Center, navigate to **Build & Extend > Providers**.
+2. Click **+ New Provider** or edit an existing entry.
+3. Configure:
+   - **Provider Type**: Select from OpenRouter, OpenAI, Anthropic, Google, DeepSeek, Groq, Mistral, Bedrock, Azure, or Custom OpenAI-Compatible.
+   - **API Key / Credentials**: Stored encrypted in the database.
+   - **Custom Base URL**: Override endpoint URLs when pointing to private enterprise proxies or local vLLM instances.
+   - **Active Models**: Enable or disable specific models available to your organization's agents.

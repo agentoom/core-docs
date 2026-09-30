@@ -9,7 +9,7 @@ import { Card, CardGrid, Badge } from '@astrojs/starlight/components';
 
 > **Agentoom** is an **Enterprise AI Operating System** that enables organizations to build, orchestrate, govern, and audit autonomous AI agents and deterministic workflows in a single, self-hosted platform.
 
-Unlike simple wrappers around AI model APIs, Agentoom treats every AI interaction as a **governed transaction**. It sits between your users or internal systems and external AI providers (like OpenAI, Anthropic, or Google Gemini), ensuring that every action is safe, compliant with regulations like the **EU AI Act**, stripped of sensitive personal data (PII), and cryptographically auditable.
+Unlike simple wrappers around AI model APIs, Agentoom treats every AI interaction as a **governed transaction**. It sits between your users or internal systems and AI model providers (including OpenRouter, Anthropic, OpenAI, Google DeepMind, DeepSeek, xAI, Groq, Mistral, Bedrock, Azure, or local Ollama/vLLM engines), ensuring that every action is safe, compliant with regulations like the **EU AI Act**, stripped of sensitive personal data (PII), and cryptographically auditable.
 
 ---
 

@@ -9,6 +9,12 @@ export default defineConfig({
 		starlight({
 			title: 'Agentoom Docs',
 			description: 'The Enterprise AI Operating System Documentation',
+			logo: {
+				src: './src/assets/agentoom_logo.svg',
+				alt: 'Agentoom Logo',
+			},
+			favicon: '/favicon.svg',
+			customCss: ['./src/styles/custom.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/agentoom' }],
 			sidebar: [
 				{

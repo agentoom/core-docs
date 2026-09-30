@@ -1,0 +1,56 @@
+/* Google Fonts: Inter & Instrument Sans (Official Agentoom typography) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --sl-font: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Agentoom Brand Accents: Neon Cyan (#00fbff) and Electric Violet (#bc13fe) */
+  --sl-color-accent-low: #083344;
+  --sl-color-accent: #0284c7;
+  --sl-color-accent-high: #38bdf8;
+}
+
+:root[data-theme='light'] {
+  --sl-color-accent-low: #e0f2fe;
+  --sl-color-accent: #0284c7;
+  --sl-color-accent-high: #0369a1;
+  --sl-color-text-accent: #0284c7;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #0f172a;
+  --sl-color-accent: #00fbff;
+  --sl-color-accent-high: #e0e7ff;
+  --sl-color-text-accent: #00fbff;
+}
+
+/* Header logo gradient glow */
+.site-title img {
+  filter: drop-shadow(0 0 6px rgba(0, 251, 255, 0.45));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.site-title:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 10px rgba(188, 19, 254, 0.6));
+}
+
+/* Custom hero styling */
+.hero > img {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px -10px rgba(0, 251, 255, 0.25);
+}
+
+/* Clean cards and badges */
+.sl-badge-tip {
+  background-color: rgba(0, 251, 255, 0.15) !important;
+  color: #00fbff !important;
+  border: 1px solid rgba(0, 251, 255, 0.4) !important;
+}
+
+.sl-badge-note {
+  background-color: rgba(188, 19, 254, 0.15) !important;
+  color: #d946ef !important;
+  border: 1px solid rgba(188, 19, 254, 0.4) !important;
+}
