@@ -39,7 +39,7 @@ The foundational package providing the application backbone, agent execution eng
 
 ### 1. Agent Runtime & Prompt Compiler
 - **Dynamic Assembly**: Compiles system instructions, user personas, injected knowledge snippets, and registered tool signatures into compliant provider payloads.
-- **Provider Agnostic**: Seamlessly switches underlying models (Anthropic Claude 3.7/3.5, OpenAI o3/o1/4.5, Gemini 2.5, DeepSeek R1, Grok, or local Ollama) without modifying agent business logic.
+- **Provider Agnostic**: Seamlessly switches underlying models across every latest generation from OpenAI, Anthropic, Google DeepMind, DeepSeek, xAI, Groq, or local Ollama/vLLM without modifying agent business logic.
 - **Stateful Memory**: Maintains conversational context across turns while analyzing long-term skills and preferences via background jobs.
 
 ### 2. Pipeline Orchestration Plane

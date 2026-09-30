@@ -51,7 +51,7 @@ Before starting, ensure you have:
      You are a helpful customer support agent for our company. 
      Always respond politely and ground your answers in the provided knowledge base.
      ```
-   - **Model Provider & Name**: Choose your preferred model provider (e.g., OpenRouter gateway, Anthropic: `claude-3-7-sonnet`, OpenAI: `o3-mini`, Google: `gemini-2.5-flash`, DeepSeek: `deepseek-r1`, or local Ollama).
+   - **Model Provider & Model**: Select your preferred provider (OpenRouter, OpenAI, Anthropic, Google DeepMind, DeepSeek, xAI, Groq, or local Ollama/vLLM) and choose any latest text or conversational model. Agentoom natively supports all current and upcoming models dynamically.
    - **Temperature**: Set to `0.3` for consistent, factual responses.
 
    Click **Save Agent**.
