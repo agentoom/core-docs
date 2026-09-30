@@ -78,17 +78,21 @@ This console command updates base rates for hundreds of model aliases in seconds
 
 ## 🛡️ Project Budgets & Safe Limits
 
-To prevent runaway loops or unexpected team expenses:
-1. **Assign Credit Allocations**: Give each project a monthly or lifetime credit balance in **Manage > Projects**.
-2. **Configurable Threshold Alerts**: Receive automatic notifications when a project reaches 75%, 90%, and 100% of its budget.
-3. **Automatic Task Interception**: When a project runs out of credits, Agentoom safely suspends non-essential agent tasks while preserving chat history and pipeline state.
+To prevent runaway loops or unexpected department expenses:
+1. **Assign Project Budgets**: Set a strict `budget_limit` (with optional start date) in **Manage > Projects**.
+2. **Real-Time Spent Tracking**: Agentoom continuously tallies `total_spent` for each project across all agent and pipeline interactions.
+3. **Automatic Interception**: When a project reaches its budget cap, `hasExceededBudget()` prevents further token consumption while safely preserving conversation histories and pipeline state.
+4. **Global Platform Quotas**: In addition to per-project budgets, the global platform balance (`app_ai_credits`) ensures tenant-level financial solvency.
 
 ---
 
-## 📑 Accounting Statements & Exports
+## 📑 Financial Reporting & Usage Auditing
 
-For accounting and finance teams, Agentoom provides one-click exportable statements:
-- **CSV Data Dumps**: Raw transaction rows with timestamp, project ID, agent name, provider, model name, tokens by dimension, and total cost in cents.
-- **PDF Summaries**: Executive-ready financial summaries showing monthly burn rate, top 5 consuming workflows, and prompt cache savings.
-- **EU AI Act Cost Attribution**: Cross-reference high-risk AI system operating costs with their Article 72 post-market compliance logs.
+The **Manage > Project Expenses** interface provides comprehensive financial visibility:
+
+- **Interactive Filtering**: Filter consumption logs across specific Projects, Agents, Action Types, and custom date ranges.
+- **Daily Spend Trajectory**: Real-time interactive charts illustrating daily cost trends across the selected timeframe.
+- **Cost Distribution Breakdowns**: Instant aggregated tables breaking down expenditures by Project, by Agent, and by Action Type.
+- **Granular Ledger Records**: Inspect the underlying `ai_usage_logs` table showing exact timestamps, token counts, pricing sources, and precise cost attribution for every single interaction.
+- **Compliance Linkage**: Every financial log links back to the originating user identity, agent trace, and Article 72 compliance audit record.
 

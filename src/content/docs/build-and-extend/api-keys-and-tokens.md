@@ -13,8 +13,12 @@ Agentoom includes a drop-in adapter package (`@agentoom/core-openapi-v1`) that m
 
 1. In the Command Center, navigate to **Build & Extend > API Keys**.
 2. Click **+ New API Key**.
-3. Set an optional expiration date and project scope.
-4. Copy the generated bearer token (`ag_live_...`).
+3. Configure the token details:
+   - **Name**: A descriptive label (e.g., `Cursor Integration` or `Production Backend Client`).
+   - **Assigned User**: Select the user context whose permissions and AI credit quota will apply.
+   - **Allowed Domains / IPs (Optional)**: Restrict API usage to specific hostnames or IP addresses.
+   - **Status**: Toggle active/inactive.
+4. Copy the generated bearer token (`sk-agt-...`). For security, the full secret key is only displayed once upon creation.
 
 ---
 
@@ -27,11 +31,17 @@ from openai import OpenAI
 
 client = OpenAI(
     base_url="https://your-agentoom-domain.com/v1",
-    api_key="ag_live_your_token_here",
+    api_key="sk-agt-your_token_here",
 )
 
+# 1. List available agents and models
+models = client.models.list()
+for model in models:
+    print(f"- {model.id} ({model.owned_by})")
+
+# 2. Chat with an agent
 response = client.chat.completions.create(
-    model="agent:3", # Target Agentoom Agent ID
+    model="agent:3", # Target Agentoom Agent ID or alias
     messages=[
         {"role": "user", "content": "What is our company refund policy?"}
     ],

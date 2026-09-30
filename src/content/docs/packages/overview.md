@@ -18,9 +18,9 @@ As of **September 2026**, the Agentoom platform is structured as a modular suite
 | **Core Compliance** | `agentoom/core-compliance` | EU AI Act Article 72 compliance engine, risk wizards, and evidence exports |
 | **Core Privacy** | `agentoom/core-privacy` | AGPII tag processor and local regex PII anonymization |
 | **Core Privacy Pro** | `agentoom/core-privacy-pro` | Client for the remote semantic PII detection microservice |
-| **Core OpenAPI v1** | `agentoom/core-openapi-v1` | Drop-in OpenAI-compatible API gateway (`/v1/chat/completions`) |
+| **Core OpenAPI v1** | `agentoom/core-openapi-v1` | Drop-in OpenAI-compatible API gateway (`/v1/chat/completions`, `/v1/models`) |
 | **Core Chat Widget** | `agentoom/core-chat-widget` | Embeddable web chat interface for customer websites |
 | **Core Accessibility** | `agentoom/core-accessibility-widget` | WCAG accessibility controls and high-contrast styling |
 | **Core Live Support** | `agentoom/core-live-support` | Seamless human takeover bridge for agent conversations |
-| **Core Instant Messaging** | `agentoom/core-instant-messaging` | Messaging bridges for WhatsApp, Telegram, and chat networks |
-| **Core Experimentoom** | `agentoom/core-experimentoom` | Experimentation, variant evaluation, and model publishing |
+| **Core Instant Messaging** | `agentoom/core-instant-messaging` | Direct messaging drivers for WhatsApp Cloud API and Telegram |
+| **Core Experimentoom** | `agentoom/core-experimentoom` | Experimentoom platform publishing tool, telemetry sync, and research reporting |

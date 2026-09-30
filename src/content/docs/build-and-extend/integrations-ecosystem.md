@@ -45,7 +45,7 @@ Connect agents to customers and internal teams across messaging networks via `@a
 
 - **WhatsApp Cloud API**: Official Meta API integration for verified business accounts. Receive customer inquiries, send rich media, and route conversations through the Trust Layer.
 - **Telegram Bot API**: Bi-directional bots for employee automation, notification channels, and operational approvals.
-- **Slack & Discord Integrations**: Outbound webhook alerts for incident detection, emergency stop triggers, and Sentinel pending authorization requests.
+- **Outbound Notification Webhooks**: Dispatch real-time JSON alerts to Slack, Discord, Microsoft Teams, or custom HTTP endpoints upon agent completions or failure events.
 - **Email (IMAP / SMTP)**: Automatically ingest inbound customer emails, draft contextual replies with citations, and enforce human approval before sending.
 
 ---
@@ -61,8 +61,8 @@ Connect agents to customers and internal teams across messaging networks via `@a
 
 ## 🗄️ 4. Storage, Vector & Knowledge Engines
 
-- **Typesense**: Lightning-fast semantic vector search and hybrid keyword retrieval for uploaded PDFs, Markdown, and Word documents.
-- **PostgreSQL & pgvector**: Relational data storage, immutable audit logs, and integrated vector embeddings.
+- **Typesense**: Primary high-performance semantic vector search engine and hybrid keyword retrieval index for uploaded PDFs, Markdown, and Word documents.
+- **Relational Databases (MySQL / PostgreSQL)**: Enterprise transactional storage for agent entities, pipelines, usage logs, and immutable audit traces.
 - **Redis & Redis Streams**: Low-latency caching, queue brokering, real-time presence tracking, and pseudonymization mapping stores.
 - **Cloud & Local Storage**: AWS S3, Cloudflare R2, MinIO, or local disk drivers for knowledge bases and compliance evidence archives.
 
@@ -70,7 +70,8 @@ Connect agents to customers and internal teams across messaging networks via `@a
 
 ## 🛡️ 5. Security, Auth & Enterprise Identity
 
-- **Authentication**: Passkeys (FIDO2 / WebAuthn passwordless authentication), TOTP Two-Factor Authentication, and OAuth 2.0 (Google, GitHub, Microsoft Azure AD).
+- **Authentication & Security**: Passkeys (FIDO2 / WebAuthn passwordless authentication), standard email/password, and TOTP Two-Factor Authentication via Laravel Fortify.
+- **Third-Party SaaS OAuth Connections**: Secure user-level OAuth 2.0 token management for external services (Gmail, Google Ads, Meta Ads, TikTok, HubSpot) allowing agents to act on behalf of authorized users.
 - **Sentinel Security Buffer**: Application-level mandatory middleware with OTP email and verbal approval drivers.
 - **AGPII Privacy Engine**: Local pattern matching and remote semantic Named Entity Recognition (NER) for multi-language PII redaction and restoration.
 - **EU AI Act Post-Market Engine**: Article 72 monitoring, risk classification wizard, emergency kill-switches, and cryptographic trace verification (`AiAgentTrace`).

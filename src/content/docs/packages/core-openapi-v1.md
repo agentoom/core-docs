@@ -9,8 +9,10 @@ Enables Agentoom to act as a drop-in replacement for OpenAI API endpoints (`/v1/
 
 ---
 
-## ⚡ Integration
+## ⚡ Endpoints & Integration
 
-- **Route**: `POST /v1/chat/completions`
-- **Authentication**: `Authorization: Bearer ag_live_...`
+- **List Models & Agents**: `GET /v1/models`
+- **Chat Completions**: `POST /v1/chat/completions`
+- **Authentication**: `Authorization: Bearer sk-agt-...`
 - **Streaming**: Fully supports Server-Sent Events (`stream: true`) with token-by-token emission and cost accounting.
+- **Auditing**: Every request maps to a system trace, user context, and credit deduction.

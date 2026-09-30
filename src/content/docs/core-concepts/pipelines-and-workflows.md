@@ -45,4 +45,4 @@ Pipeline Definition (Steps 0..N)
 1. **Conditional Branching**: Steps can check variables using 15 operators (`>`, `<`, `=`, `contains`, `in`, `matches_regex`). If the condition is not met, the step is skipped cleanly.
 2. **Jump Control**: Steps can redirect execution backward or forward to a specific step based on runtime conditions (e.g., jump to Step 5 if verification fails).
 3. **Data Passing**: Output from previous steps is automatically available via variable interpolation: `$previous_output.field` or `$step_0.result`.
-4. **Dedicated Failure Handlers**: If any critical step fails, an optional recovery pipeline executes automatically (e.g., paging on-call engineers via Slack or triggering an email alert).
+4. **Granular Error Handling**: Configure how each step handles unexpected failures: automatically retry with exponential backoff (`retry`), pass the error message to the next step (`continue`), or dynamically divert execution to an alternative remediation step (`jump`).

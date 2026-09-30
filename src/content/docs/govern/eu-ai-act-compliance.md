@@ -30,5 +30,5 @@ Before deploying an agent to production, operators can complete the built-in Ass
 ### 3. Human-In-The-Loop (HITL) Queue
 The **Pending Decisions** interface serves as a central clearinghouse where human supervisors review, approve, or reject escalated agent actions before any real-world impact occurs.
 
-### 4. Auditor-Ready Evidence Packages
-Generate complete audit archives (`.zip` containing cryptographically signed JSON traces, risk assessment history, and model configuration snapshots) with a single click to present directly to compliance auditors or regulatory bodies.
+### 4. Auditor-Ready Evidence Bundling
+The underlying `EvidencePackageGenerator` service compiles comprehensive compliance bundles (containing cryptographically signed JSON traces, risk classification assessments, and model configuration history) into portable `.zip` or JSON archives for internal audits and regulatory submissions.

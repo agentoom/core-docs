@@ -15,9 +15,7 @@ In an enterprise environment, different departments (Customer Support, Finance, 
 
 ## 🏢 Project Isolation Boundaries
 
-When an agent, pipeline, or document belongs to a project:
-
-- **Data Privacy**: Knowledge base documents and conversation histories in Project A cannot be accessed by Project B.
-- **Budget & Billing**: Credit balances, top-ups, and expense reports are calculated independently per project.
-- **Governance Profiles**: Project A (Finance) can enforce **Enhanced Governance** requiring OTP for all tool calls, while Project C (R&D) can use **Basic Governance** for rapid prototyping.
-- **Role-Based Access**: Users can be granted *Admin* privileges in one project while remaining read-only *Viewers* in another.
+- **Data & Resource Isolation**: Agents, knowledge base documents, and conversation histories are linked to specific projects, keeping team workflows properly segregated.
+- **Dedicated System Users**: Every created project automatically provisions an isolated internal system user (`project.{id}.system@agentoom.internal`) to handle background queue tasks and scheduled pipelines under proper attribution.
+- **Budget Ceilings & Financial Metering**: Assign a strict `budget_limit` and active start date to each project. Cumulative spending is tracked via `total_spent`, preventing budget overruns by automatically halting further paid API calls when the limit is reached.
+- **Team Project Membership**: Administrators assign users to specific projects via the `project_user` association, controlling workspace membership across organizational divisions.

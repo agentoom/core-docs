@@ -14,7 +14,7 @@ Agentoom includes dedicated Laravel Artisan CLI commands for system initializati
 ### System & Discovery
 
 #### `php artisan agentoom:install`
-Initializes the Agentoom environment, creating default user roles (Superadmin, Admin, Compliance Officer, Operator, Developer), seeding supported languages, and preparing system tables.
+Initializes the Agentoom environment, creating default user roles (`superadmin`, `admin`, `user`, `registered`), seeding supported languages, and preparing system tables.
 
 ```bash
 php artisan agentoom:install
@@ -34,6 +34,13 @@ Scans the `Agentoom\Core\Ai\Tools` namespace and registers all available PHP act
 
 ```bash
 php artisan agentoom:discover-tools
+```
+
+#### `php artisan agentoom:create-missing-project-system-users`
+Ensures every project has a corresponding dedicated system user for executing automated background jobs and scheduled pipelines.
+
+```bash
+php artisan agentoom:create-missing-project-system-users
 ```
 
 ---
@@ -111,6 +118,13 @@ Runs background semantic memory analysis over recent conversations to extract us
 
 ```bash
 php artisan agentoom:analyze-memory
+```
+
+#### `php artisan ai:prune-conversations`
+Deletes agent conversation sessions and associated interaction traces that exceed the configured data retention timeframe according to enterprise privacy policies.
+
+```bash
+php artisan ai:prune-conversations
 ```
 
 ---

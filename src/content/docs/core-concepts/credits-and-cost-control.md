@@ -9,12 +9,14 @@ Running AI models in enterprise environments can lead to surprise bills if left 
 
 ---
 
-## 💰 How Credits Work
+## 💰 Multi-Tiered Cost Governance
 
-1. **Credit Top-Ups**: Projects are allocated a credit balance (e.g., $500 / €500 or custom unit equivalents).
-2. **Real-Time Cost Interception**: As an agent generates streaming responses, middleware calculates the input and output token counts against provider pricing tables.
-3. **Automatic Deduction**: Credits are subtracted in real time from the project's balance.
-4. **Hard Budget Caps**: If an agent hits its configured spending limit, further AI calls are paused immediately, and operators receive an alert.
+Agentoom enforces financial safeguards across three distinct operational layers:
+
+1. **Platform Credit Balance**: The overall installation maintains a credit balance (`app_ai_credits`) preventing unmonitored external API charges.
+2. **Project-Level Budgets**: Each department or team project defines a strict `budget_limit`. When cumulative spending (`total_spent`) reaches this ceiling, further agent calls in that project are automatically blocked.
+3. **Agent-Level Spending Limits**: Individual agents can be configured with specific spending caps and notification thresholds to prevent runaway loops.
+4. **Real-Time Cost Interception**: The `LogAgentInteraction` middleware calculates exact 8-dimensional token costs in real time against verified provider pricing matrices before finalizing the transaction.
 
 ---
 

@@ -127,6 +127,6 @@ Tools to expand your agents' capabilities and connect external services.
 
 ### D. Settings
 
-- **Access Control**: Invite users, assign roles (*Superadmin*, *Admin*, *Operator*, *Viewer*), and grant granular permissions.
-- **Platform**: Configure outbound email (SMTP), default language, and system branding.
-- **System**: Monitor background queue workers (Laravel Horizon), run system maintenance commands, and export compliance backups.
+- **Access Control**: Invite users, assign roles (`superadmin`, `admin`, `user`, or custom RBAC roles), and grant granular permissions.
+- **Platform**: Configure outbound email transports (SMTP / Gmail OAuth), default language localization, and system branding.
+- **System**: Configure autonomous System AI Worker Agents (such as the background Memory Worker and Summarizer Agent) and monitor general platform health. Dedicated queue supervision is provided by Laravel Horizon (`/horizon`).

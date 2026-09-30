@@ -9,8 +9,12 @@ With `@agentoom/core-instant-messaging`, your agents can communicate with custom
 
 ---
 
-## 📱 Supported Messaging Bridges
+## 📱 Native Messaging Drivers
 
-- **WhatsApp Cloud API**: Respond to inbound customer support queries on verified WhatsApp business numbers.
-- **Telegram Bot API**: Interact with internal team members, send broadcast notifications, and receive commands.
-- **Slack / Discord Webhooks**: Dispatch automated incident alerts and pending decision requests to engineering channels.
+`@agentoom/core-instant-messaging` provides direct, first-party drivers for two major communication platforms:
+
+- **WhatsApp Cloud API (`WhatsAppDriver`)**: Connect official Meta WhatsApp Business accounts. Receive inbound customer inquiries, route context through the Trust Layer, and return streaming AI responses.
+- **Telegram Bot API (`TelegramDriver`)**: Register Telegram bots to provide conversational assistants for staff, send automated broadcast updates, and trigger pipeline workflows.
+
+> [!NOTE]
+> For team notifications in **Slack** and **Discord**, configure outbound webhook subscriptions under **Manage > Webhooks** to post JSON payloads to your incoming webhook URLs.

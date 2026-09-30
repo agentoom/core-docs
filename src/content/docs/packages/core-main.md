@@ -44,7 +44,7 @@ The foundational package providing the application backbone, agent execution eng
 
 ### 2. Pipeline Orchestration Plane
 - **Linear & Branching Flows**: Chains multiple agents, deterministic PHP actionables, webhook triggers, and human approvals into resilient pipelines.
-- **Zero-Token Actionables**: Native PHP classes decorated with `#[AsAiActionable]` execute deterministically without consuming token budgets or introducing non-deterministic latency.
+- **Zero-Token Actionables**: Native PHP methods decorated with `#[Actionable]` execute deterministically without consuming token budgets or introducing non-deterministic latency.
 - **Asynchronous Pausing**: Supports durable delays (`resume_at`) and webhook callbacks without blocking queue worker processes.
 
 ### 3. Multi-Provider Gateway & Financial Tracking
