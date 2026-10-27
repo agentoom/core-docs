@@ -4,11 +4,16 @@ The centralized developer and operator documentation portal for **Agentoom Core*
 
 ---
 
+> [!IMPORTANT]
+> **Post-Splitting Versioning & Pre-Release Notice (`v0.9.1`)**
+> Version `0.9.1` represents the documentation suite following the modular package splitting. It is actively updated alongside ongoing testing of satellite packages to ensure all installation guides, architecture overviews, and API references accurately match the post-split modular packages prior to the `1.0.0` stable milestone.
+
 ## 🌟 Overview
 
 The `@agentoom/core-docs` package contains the complete technical documentation, architecture guides, API references, tool development tutorials, and deployment documentation for the Agentoom ecosystem. It builds into a fast, accessible, static documentation portal with full-text search, dark/light theme switching, syntax highlighting, and responsive navigation.
 
 - **Package Name**: `@agentoom/core-docs`
+- **Version**: `0.9.1` (Pre-release / Post-split testing)
 - **Engine**: Astro v5+ with Starlight documentation theme
 - **Output**: Static HTML/CSS/JS (`dist/`) suitable for hosting on Nginx, Cloudflare Pages, Vercel, or AWS S3
 
