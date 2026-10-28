@@ -16,6 +16,7 @@ An **Endpoint** generates a dedicated, secure webhook URL. When external systems
 - **Dual Execution Modes**:
   - **Direct Response (Asynchronous)**: Returns an immediate customizable status acknowledgement (e.g. `200` or `202`) while dispatching execution to background queue workers (`agent-chat-processing`).
   - **Synchronous Execution**: Waits for the agent or pipeline run to complete and returns the processed response payload directly to the caller.
+- **Pre-Execution Decision Filters**: Endpoints can evaluate incoming payloads with a Decision Model before triggering the target agent or pipeline. If the payload does not satisfy the evaluation instructions with the required confidence threshold, execution halts and handles the request via the configured rejection strategy (`skip_200`, `reject_422`, or `silent_drop`). See [Decision Models & Filter Gates](/core-concepts/decision-models) for configuration.
 - **Payload Forwarding**: Inbound JSON parameters are forwarded as input context to the agent or Step 0 of the pipeline.
 - **Security & Rate Limiting**: Restrict traffic with allowed origin/IP whitelists (`allowed_sources`), header bearer auth tokens (`auth_token`), and per-endpoint rate limit throttling.
 

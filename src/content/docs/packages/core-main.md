@@ -43,11 +43,16 @@ The foundational package providing the application backbone, agent execution eng
 - **Stateful Memory**: Maintains conversational context across turns while analyzing long-term skills and preferences via background jobs.
 
 ### 2. Pipeline Orchestration Plane
-- **Linear & Branching Flows**: Chains multiple agents, deterministic PHP actionables, webhook triggers, and human approvals into resilient pipelines.
+- **Linear & Branching Flows**: Chains multiple agents, deterministic PHP actionables, webhook triggers, decision models, and human approvals into resilient pipelines.
+- **Decision Steps & Confidence Routing**: Evaluates conditions with calibrated probabilities ($0.0 - 1.0$), dynamically branching to `next_step_on_true` or `next_step_on_false`.
 - **Zero-Token Actionables**: Native PHP methods decorated with `#[Actionable]` execute deterministically without consuming token budgets or introducing non-deterministic latency.
 - **Asynchronous Pausing**: Supports durable delays (`resume_at`) and webhook callbacks without blocking queue worker processes.
 
-### 3. Multi-Provider Gateway & Financial Tracking
+### 3. Decision Model Service & Endpoint Filter Gates
+- **`DecisionModelService`**: Dual-engine evaluator supporting native OpenRouter Decisions API (`/api/alpha/decisions`) and universal calibrated structured LLM fallback.
+- **Endpoint Gating**: Protects webhook endpoints by screening incoming payloads against decision instructions before invoking agents or pipelines, supporting `skip_200`, `reject_422`, and `silent_drop` rejection modes.
+
+### 4. Multi-Provider Gateway & Financial Tracking
 - **Automated Price Sync**: Keeps local pricing records up to date using `php artisan ai:sync-pricing` (fetching from `litellm` and `models_dev`).
 - **8-Dimensional Metering**: Tracks input tokens, output tokens, prompt cache reads, prompt cache writes, reasoning/thinking tokens, audio streams, and image units.
 - **Hard Credit Safeguards**: Enforces strict project quotas that halt non-essential execution when budgets are depleted.

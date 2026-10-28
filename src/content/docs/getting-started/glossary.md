@@ -34,7 +34,13 @@ Sensitive personal information such as full names, email addresses, credit card 
 Agentoom's privacy protection layer. It detects PII in user prompts, replaces it with temporary placeholders before sending the text to third-party AI models (like OpenAI or Anthropic), and reverses the placeholders in the final response. Your customers' private data never leaves your infrastructure.
 
 ### Pipeline
-A sequence of chained steps where the output of one step feeds into the next. Pipelines can combine both intelligent AI agent steps and deterministic Actionable steps, along with conditional branching (e.g., "if sentiment is negative, jump to step 4").
+A sequence of chained steps where the output of one step feeds into the next. Pipelines can combine intelligent AI agent steps, deterministic Actionable steps, and Decision Model steps with confidence-based branching.
+
+### Decision Model
+A specialized, calibrated AI model (such as TypeSafe JEV or a structured LLM evaluator) engineered for high-speed probabilistic judgment rather than text generation. It evaluates arbitrary contexts against boolean or choice criteria and outputs calibrated confidence scores ($0.0 - 1.0$) to drive automated routing.
+
+### Decision Filter
+A pre-execution security and relevance gate applied to an HTTP Endpoint. The decision filter evaluates incoming webhook payloads against specified criteria; if the payload fails to meet the confidence threshold, the request is halted cleanly (via `skip_200`, `reject_422`, or `silent_drop`) without invoking downstream agents or pipelines.
 
 ### Schedule
 An automated timer (using cron syntax) that triggers a pipeline at scheduled dates and times without human intervention.

@@ -29,6 +29,7 @@ Agentoom provides pre-built, production-tested connectors for the entire industr
 ### 1. OpenRouter (Unified Model Gateway)
 - **Best For**: Centralized access to over 300+ models with automated fallback routing and zero vendor lock-in.
 - **Capabilities**: Connect once with a single API key to access every major lab (OpenAI, Anthropic, Google, Meta, DeepSeek, Qwen, Mistral, and more). If a primary provider suffers an outage or hits rate limits, OpenRouter automatically reroutes traffic to an alternative healthy endpoint.
+- **Native Decisions API & Dedicated Decision Models**: Native support for OpenRouter's `/api/alpha/decisions` endpoint and specialized probabilistic models (e.g. `typesafe/jev-1.14`, `typesafe/jev-latest`, `liquid/d1.1`) returning calibrated `noul` probabilities and `choice` classifications for pipeline branching and endpoint filter gating.
 
 ### 2. OpenAI
 - **Capabilities**: Full support for all current and upcoming OpenAI models:
@@ -87,12 +88,14 @@ To keep your Agentoom installation automatically aware of new models and changin
 
 ### Discover & Register New Models
 ```bash
-# Query all configured providers for newly released models
+# Query all configured providers for newly released models (including text, transcription, and decision models)
 php artisan providers:sync-models
 
 # Query a specific provider (e.g. openrouter, openai, anthropic)
 php artisan providers:sync-models openrouter
 ```
+
+> **Note on Decision Models**: When syncing OpenRouter, Agentoom automatically queries `output_modalities=decisions` to index specialized classification and evaluation models (e.g. TypeSafe JEV). If OpenRouter is not configured, Agentoom's `DecisionModelService` automatically falls back to universal calibrated LLM JSON evaluation with zero configuration changes.
 
 ### Sync Real-Time Multi-Dimensional Pricing
 ```bash
